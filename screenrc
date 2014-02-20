@@ -1,0 +1,31 @@
+term screen-256color
+
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev
+bindkey -k F2 next
+
+#don't show splash screen
+startup_message off
+
+#1024 line scrollback buffer
+defscrollback 1024
+
+# Window list at the bottom.
+hardstatus alwayslastline
+#hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+#hardstatus string '%{= wk}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{= kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ][ %{r}%l%{w} ]%{w}[%{r} %m/%d/%y %C %A %{w}]%{w}'
+hardstatus string '%{= kw}[ %{= kr}%H%{= kw} ][ %= %{= kw}%?%-Lw%?%{= kr}(%{= kW}%n*%f %t%?(%u)%?%{= kr})%{= kw}%?%+Lw%?%?%= %{w} ][ %{r}%l%{w} ]%{w}[%{r} %m/%d/%y %C %A %{w}]%{w}'
+
+#detach instead of disconnect
+autodetach on
+
+screen -t HTOP 0 htop
+screen -t AUTH 1 tail -n 100 -F /var/log/auth.log
+screen -t MSGS 1 tail -n 100 -F /var/log/messages
+#screen -t MC 2 mc
+screen -t bash 2 bash
+screen -t bash 3 
+screen -t bash 4
+screen -t bash 5
+#screen -t ERRORS 4 tail -F /var/log/errors.log
+#screen -t IRSSI 6 irssi
