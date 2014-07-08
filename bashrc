@@ -58,7 +58,8 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \n$ '
-	PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput setaf 7)\]\u@\h\[$(tput setaf 4)\]]\[$(tput setaf 6)\]\w\\n\$ \[$(tput sgr0)\]"
+	#PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput setaf 7)\]\u@\h\[$(tput setaf 4)\]]\[$(tput setaf 6)\]\w\\n\$ \[$(tput sgr0)\]"
+    PS1="┌──\[$(tput bold)\]\[$(tput setaf 4)\]\u@\h[\[$(tput setaf 6)\]\w\[$(tput setaf 4)\]]\n\[$(tput sgr0)\]└─╼ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w \n$ '
 fi
